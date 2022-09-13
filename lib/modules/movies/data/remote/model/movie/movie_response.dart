@@ -16,12 +16,12 @@ class MovieResponse {
   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
       _$MovieResponseFromJson(json);
 
-  int? id;
-  double? voteAverage;
-  String? title;
-  String? posterUrl;
-  List<String>? genres;
-  String? releaseDate;
+  final int? id;
+  final double? voteAverage;
+  final String? title;
+  final String? posterUrl;
+  final List<String>? genres;
+  final String? releaseDate;
 
   Map<String, dynamic> toJson() => _$MovieResponseToJson(this);
 }
