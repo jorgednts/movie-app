@@ -1,7 +1,7 @@
 class SpokenLanguagesModel {
   SpokenLanguagesModel({
-    this.name,
+    required this.name,
   });
 
-  final String? name;
+  final String name;
 }

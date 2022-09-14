@@ -1,13 +1,13 @@
 class ProductionCompaniesModel {
   ProductionCompaniesModel({
-    this.id,
-    this.logoUrl,
-    this.name,
-    this.originCountry,
+    required this.id,
+    required this.logoUrl,
+    required this.name,
+    required this.originCountry,
   });
 
-  final int? id;
-  final String? logoUrl;
-  final String? name;
-  final String? originCountry;
+  final int id;
+  final String logoUrl;
+  final String name;
+  final String originCountry;
 }
