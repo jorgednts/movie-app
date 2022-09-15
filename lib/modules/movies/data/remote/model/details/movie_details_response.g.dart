@@ -10,7 +10,6 @@ MovieDetailsResponse _$MovieDetailsResponseFromJson(
         Map<String, dynamic> json) =>
     MovieDetailsResponse(
       adult: json['adult'] as bool?,
-      backdropUrl: json['backdrop_url'] as String?,
       budget: json['budget'] as int?,
       genres:
           (json['genres'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -39,7 +38,6 @@ Map<String, dynamic> _$MovieDetailsResponseToJson(
         MovieDetailsResponse instance) =>
     <String, dynamic>{
       'adult': instance.adult,
-      'backdrop_url': instance.backdropUrl,
       'budget': instance.budget,
       'genres': instance.genres,
       'id': instance.id,

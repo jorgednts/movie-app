@@ -22,7 +22,6 @@ extension MovieListResponseToMovieListModel on List<MovieResponse> {
 extension MovieDetailsResponseToMovieDetailsModel on MovieDetailsResponse {
   MovieDetailsModel toMovieDetailsModel() => MovieDetailsModel(
         adult: adult ?? NullResponseConstants.nullBoolResponse,
-        backdropUrl: backdropUrl ?? NullResponseConstants.nullStringResponse,
         budget: budget ?? NullResponseConstants.nullIntResponse,
         genres: genres ?? [],
         id: id ?? NullResponseConstants.nullIntResponse,

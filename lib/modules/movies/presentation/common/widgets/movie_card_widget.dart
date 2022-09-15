@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/modules/movies/utils/string_extensions.dart';
 
 import '../../../constants/movies_constant_images.dart';
 import '../../../domain/model/movie/movie_model.dart';
+import '../../../utils/string_extensions.dart';
+import '../../page/movie_details_page.dart';
 import '../constants/movies_constant_colors.dart';
 
 class MovieCardWidget extends StatelessWidget {
@@ -139,7 +140,15 @@ class MovieCardWidget extends StatelessWidget {
                   const SizedBox(height: 10),
                   Center(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                MovieDetailsPage(id: movie.id),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: MoviesConstantColors.pink,
                         minimumSize: const Size(0, 0),

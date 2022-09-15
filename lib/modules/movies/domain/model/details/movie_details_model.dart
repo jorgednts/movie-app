@@ -3,7 +3,6 @@ import 'production_companies_model.dart';
 class MovieDetailsModel {
   MovieDetailsModel({
     required this.adult,
-    required this.backdropUrl,
     required this.budget,
     required this.genres,
     required this.id,
@@ -22,7 +21,6 @@ class MovieDetailsModel {
   });
 
   final bool adult;
-  final String backdropUrl;
   final int budget;
   final List<String> genres;
   final int id;

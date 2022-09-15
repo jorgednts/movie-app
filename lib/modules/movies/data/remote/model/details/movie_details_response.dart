@@ -9,7 +9,6 @@ part 'movie_details_response.g.dart';
 class MovieDetailsResponse {
   MovieDetailsResponse({
     this.adult,
-    this.backdropUrl,
     this.budget,
     this.genres,
     this.id,
@@ -31,7 +30,6 @@ class MovieDetailsResponse {
       _$MovieDetailsResponseFromJson(json);
 
   final bool? adult;
-  final String? backdropUrl;
   final int? budget;
   final List<String>? genres;
   final int? id;

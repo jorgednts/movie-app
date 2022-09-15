@@ -36,8 +36,8 @@ class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
   @override
   Future<MovieDetailsModel> getMovieDetails(int id) async {
     try {
-      final response = await _dio
-          .get('${MoviesConstantsUrlApi.movieBaseUrl}/${id.toString()}');
+      final response = await _dio.get(
+          '${MoviesConstantsUrlApi.movieBaseUrl}movies-v2/$id');
       final movieDetailResponse = MovieDetailsResponse.fromJson(response.data);
       return movieDetailResponse.toMovieDetailsModel();
     } on DioError catch (dioError, _) {
