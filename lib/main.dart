@@ -19,5 +19,6 @@ class MyApp extends StatelessWidget {
           fontFamily: MoviesConstantFonts.fredoka,
         ),
         home: const MovieListPage(),
+        debugShowCheckedModeBanner: false,
       );
 }

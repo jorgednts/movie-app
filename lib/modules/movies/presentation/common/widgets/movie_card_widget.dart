@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/modules/movies/utils/string_extensions.dart';
 
 import '../../../constants/movies_constant_images.dart';
 import '../../../domain/model/movie/movie_model.dart';
@@ -55,9 +56,9 @@ class MovieCardWidget extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const SizedBox(height: 5),
+                  //const SizedBox(height: 5),
                   Text(
                     movie.title,
                     softWrap: true,
@@ -67,7 +68,7 @@ class MovieCardWidget extends StatelessWidget {
                       color: MoviesConstantColors.white,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  //const SizedBox(height: 8),
                   Row(
                     children: [
                       const Icon(
@@ -75,7 +76,7 @@ class MovieCardWidget extends StatelessWidget {
                         color: MoviesConstantColors.gold,
                         size: 20,
                       ),
-                      const SizedBox(width: 5),
+                      //const SizedBox(width: 5),
                       Text(
                         movie.voteAverage.toStringAsFixed(1),
                         style: const TextStyle(
@@ -86,7 +87,7 @@ class MovieCardWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8),
+                  //const SizedBox(height: 8),
                   Container(
                     height: 50,
                     child: ListView(
@@ -125,7 +126,7 @@ class MovieCardWidget extends StatelessWidget {
                       const SizedBox(width: 5),
                       Expanded(
                         child: Text(
-                          movie.releaseDate,
+                          movie.releaseDate.convertDateToLocaleBr(),
                           style: const TextStyle(
                             color: MoviesConstantColors.white,
                             fontWeight: FontWeight.w400,

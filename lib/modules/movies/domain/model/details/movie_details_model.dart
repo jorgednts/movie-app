@@ -1,5 +1,4 @@
 import 'production_companies_model.dart';
-import 'spoken_languages_model.dart';
 
 class MovieDetailsModel {
   MovieDetailsModel({
@@ -35,7 +34,7 @@ class MovieDetailsModel {
   final String releaseDate;
   final int revenue;
   final int runtime;
-  final List<SpokenLanguagesModel> spokenLanguages;
+  final List<String> spokenLanguages;
   final String status;
   final String title;
   final double voteAverage;

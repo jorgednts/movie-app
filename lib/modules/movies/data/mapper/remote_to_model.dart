@@ -1,8 +1,6 @@
-import 'package:movie_app/modules/movies/domain/model/details/movie_details_model.dart';
-import 'package:movie_app/modules/movies/domain/model/details/production_companies_model.dart';
-import 'package:movie_app/modules/movies/domain/model/details/spoken_languages_model.dart';
-
 import '../../constants/null_responses_constants.dart';
+import '../../domain/model/details/movie_details_model.dart';
+import '../../domain/model/details/production_companies_model.dart';
 import '../../domain/model/movie/movie_model.dart';
 import '../remote/model/details/movie_details_response.dart';
 import '../remote/model/movie/movie_response.dart';
@@ -51,10 +49,9 @@ extension MovieDetailsResponseToMovieDetailsModel on MovieDetailsResponse {
         revenue: revenue ?? NullResponseConstants.nullIntResponse,
         runtime: runtime ?? NullResponseConstants.nullIntResponse,
         spokenLanguages: spokenLanguages
-                ?.map(
-                  (e) => SpokenLanguagesModel(
-                      name: e.name ?? NullResponseConstants.nullStringResponse),
-                )
+                ?.map((spokenLanguages) =>
+                    spokenLanguages.name ??
+                    NullResponseConstants.nullStringResponse)
                 .toList() ??
             [],
         status: status ?? NullResponseConstants.nullStringResponse,
