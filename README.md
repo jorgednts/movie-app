@@ -16,3 +16,4 @@ Clean Architecture + MVVM
 - Internaciolização: Flutter Intl
 
 ## Screenshots:
+<img height="480px" src="assets/images_read_me/img1.png"> <img height="480px" src="assets/images_read_me/img2.png"> <img height="480px" src="assets/images_read_me/img3.png"> <img height="480px" src="assets/images_read_me/img4.png"> <img height="480px" src="assets/images_read_me/img5.png"> <img height="480px" src="assets/images_read_me/img6.png"> 
