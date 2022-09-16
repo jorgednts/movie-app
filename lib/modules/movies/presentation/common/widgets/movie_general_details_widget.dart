@@ -6,11 +6,11 @@ import '../constants/movies_constant_colors.dart';
 
 class MovieGeneralDetailsWidget extends StatelessWidget {
   const MovieGeneralDetailsWidget({
-    required this.movie,
+    required this.movieDetails,
     Key? key,
   }) : super(key: key);
 
-  final MovieDetailsModel movie;
+  final MovieDetailsModel movieDetails;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -36,7 +36,7 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: movie.originalTitle,
+                          text: movieDetails.originalTitle,
                           style: const TextStyle(
                             color: MoviesConstantColors.white,
                             fontWeight: FontWeight.w700,
@@ -45,7 +45,7 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
                         ),
                         const TextSpan(text: '   '),
                         TextSpan(
-                          text: '(${movie.originalLanguage.toUpperCase()})',
+                          text: '(${movieDetails.originalLanguage.toUpperCase()})',
                           style: const TextStyle(
                             color: MoviesConstantColors.white,
                             fontWeight: FontWeight.w500,
@@ -66,7 +66,7 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  movie.releaseDate.convertDateToLocaleBr(),
+                  movieDetails.releaseDate.convertDateToLocaleBr(),
                   style: const TextStyle(
                     color: MoviesConstantColors.white,
                     fontWeight: FontWeight.w600,
@@ -83,7 +83,7 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${movie.runtime.toString()} min.',
+                  '${movieDetails.runtime.toString()} min.',
                   style: const TextStyle(
                     color: MoviesConstantColors.white,
                     fontWeight: FontWeight.w600,

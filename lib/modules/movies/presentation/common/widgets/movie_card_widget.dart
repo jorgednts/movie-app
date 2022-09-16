@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/movies_constant_images.dart';
 import '../../../domain/model/movie/movie_model.dart';
 import '../../../utils/string_extensions.dart';
 import '../../page/movie_details_page.dart';
 import '../constants/movies_constant_colors.dart';
+import 'movie_genre_list_widget.dart';
+import 'movie_poster_widget.dart';
 
 class MovieCardWidget extends StatelessWidget {
   const MovieCardWidget({
@@ -31,28 +32,7 @@ class MovieCardWidget extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 15,
-                top: 8,
-                right: 8,
-                bottom: 8,
-              ),
-              child: FadeInImage(
-                width: 100,
-                height: 180,
-                placeholderFit: BoxFit.scaleDown,
-                image: NetworkImage(movie.posterUrl),
-                placeholder:
-                    const AssetImage(MoviesConstantsImages.loadingImage),
-                imageErrorBuilder: (content, error, stackTrace) => Image.asset(
-                  MoviesConstantsImages.errorImage,
-                  width: 100,
-                  height: 180,
-                  alignment: Alignment.center,
-                ),
-              ),
-            ),
+            MoviePosterWidget(posterUrl: movie.posterUrl),
             const SizedBox(width: 10),
             Expanded(
               child: Column(
@@ -89,29 +69,9 @@ class MovieCardWidget extends StatelessWidget {
                     ],
                   ),
                   //const SizedBox(height: 8),
-                  Container(
-                    height: 50,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: List.generate(
-                        movie.genres.length,
-                        (index) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 3),
-                          child: Chip(
-                            padding: EdgeInsets.zero,
-                            label: Text(
-                              movie.genres[index],
-                              style: const TextStyle(
-                                color: MoviesConstantColors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                              ),
-                            ),
-                            backgroundColor: MoviesConstantColors.lightBlue,
-                          ),
-                        ),
-                      ),
-                    ),
+                  MovieGenreListWidget(
+                    genres: movie.genres,
+                    backgroundColor: MoviesConstantColors.secondaryColor,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
