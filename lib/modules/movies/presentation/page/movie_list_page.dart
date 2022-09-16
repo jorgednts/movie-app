@@ -1,11 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../data/remote/data_source/movies_remote_data_source.dart';
-import '../../data/repository/movie_repository_impl.dart';
-import '../../domain/repository/movie_repository.dart';
-import '../../domain/use_case/get_movie_list_use_case.dart';
-import '../../external/remote_data_source/movies_remote_data_source_impl.dart';
 import '../../utils/context_extensions.dart';
 import '../common/constants/movies_constant_colors.dart';
 import '../common/widgets/circular_progress_indicator_widget.dart';
@@ -21,21 +16,12 @@ class MovieListPage extends StatefulWidget {
 }
 
 class _MovieListPageState extends State<MovieListPage> {
-  late Dio dio;
-  late MoviesRemoteDataSource moviesRemoteDataSource;
-  late MovieRepository movieRepository;
-  late GetMovieListUseCase getMovieListUseCase;
-  late MovieListPageController controller;
+  final MovieListPageController controller =
+      Modular.get<MovieListPageController>();
 
   @override
   void initState() {
     super.initState();
-    dio = Dio();
-    moviesRemoteDataSource = MoviesRemoteDataSourceImpl(dio: dio);
-    movieRepository =
-        MovieRepositoryImpl(moviesRemoteDataSource: moviesRemoteDataSource);
-    getMovieListUseCase = GetMovieListUseCaseImpl(movieRepository);
-    controller = MovieListPageController(getMovieListUseCase);
     controller.getMovieList();
   }
 

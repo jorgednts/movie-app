@@ -6,8 +6,9 @@ mixin GetMovieDetailsUseCase {
 }
 
 class GetMovieDetailsUseCaseImpl implements GetMovieDetailsUseCase {
-  GetMovieDetailsUseCaseImpl(MovieRepository movieRepository)
-      : _movieRepository = movieRepository;
+  GetMovieDetailsUseCaseImpl({
+    required MovieRepository movieRepository,
+  }) : _movieRepository = movieRepository;
 
   final MovieRepository _movieRepository;
 

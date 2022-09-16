@@ -7,8 +7,9 @@ import '../../domain/use_case/get_movie_list_use_case.dart';
 import '../page/movie_list_page_state.dart';
 
 class MovieListPageController extends ValueNotifier<MovieListPageState> {
-  MovieListPageController(GetMovieListUseCase getMovieListUseCase)
-      : _getMovieListUseCase = getMovieListUseCase,
+  MovieListPageController({
+    required GetMovieListUseCase getMovieListUseCase,
+  })  : _getMovieListUseCase = getMovieListUseCase,
         super(MovieListPageState.loading);
 
   final GetMovieListUseCase _getMovieListUseCase;

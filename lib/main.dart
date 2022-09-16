@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
+import 'di/app_module.dart';
 import 'modules/movies/presentation/common/constants/movies_constant_colors.dart';
 import 'modules/movies/presentation/common/constants/movies_constant_fonts.dart';
-import 'modules/movies/presentation/page/movie_list_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
+  Widget build(BuildContext context) => MaterialApp.router(
         title: 'Flutter Demo',
         theme: ThemeData(
           primaryColor: MoviesConstantColors.primaryColor,
           fontFamily: MoviesConstantFonts.fredoka,
         ),
-        home: const MovieListPage(),
         debugShowCheckedModeBanner: false,
+        routeInformationParser: Modular.routeInformationParser,
+        routerDelegate: Modular.routerDelegate,
       );
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../constants/movies_constant_routes.dart';
 import '../../../domain/model/movie/movie_model.dart';
 import '../../../utils/string_extensions.dart';
-import '../../page/movie_details_page.dart';
 import '../constants/movies_constant_colors.dart';
 import 'movie_genre_list_widget.dart';
 import 'movie_poster_widget.dart';
@@ -57,7 +58,7 @@ class MovieCardWidget extends StatelessWidget {
                         color: MoviesConstantColors.gold,
                         size: 20,
                       ),
-                      //const SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(
                         movie.voteAverage.toStringAsFixed(1),
                         style: const TextStyle(
@@ -100,15 +101,10 @@ class MovieCardWidget extends StatelessWidget {
                   const SizedBox(height: 10),
                   Center(
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                MovieDetailsPage(id: movie.id),
-                          ),
-                        );
-                      },
+                      onPressed: () => Modular.to.pushNamed(
+                        MoviesConstantsRoutes.movieDetailsPage,
+                        arguments: movie.id,
+                      ),
                       style: ElevatedButton.styleFrom(
                         primary: MoviesConstantColors.pink,
                         minimumSize: const Size(0, 0),

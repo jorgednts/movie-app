@@ -1,11 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../data/remote/data_source/movies_remote_data_source.dart';
-import '../../data/repository/movie_repository_impl.dart';
-import '../../domain/repository/movie_repository.dart';
-import '../../domain/use_case/get_movie_details_use_case.dart';
-import '../../external/remote_data_source/movies_remote_data_source_impl.dart';
 import '../common/constants/movies_constant_colors.dart';
 import '../common/widgets/circular_progress_indicator_widget.dart';
 import '../common/widgets/movie_additional_details_widget.dart';
@@ -27,22 +22,12 @@ class MovieDetailsPage extends StatefulWidget {
 }
 
 class _MovieDetailsPageState extends State<MovieDetailsPage> {
-  late Dio dio;
-  late MoviesRemoteDataSource moviesRemoteDataSource;
-  late MovieRepository movieRepository;
-  late GetMovieDetailsUseCase getMovieDetailsUseCase;
-  late MovieDetailsPageController controller;
+  final MovieDetailsPageController controller =
+      Modular.get<MovieDetailsPageController>();
 
   @override
   void initState() {
     super.initState();
-    dio = Dio();
-    moviesRemoteDataSource = MoviesRemoteDataSourceImpl(dio: dio);
-    movieRepository =
-        MovieRepositoryImpl(moviesRemoteDataSource: moviesRemoteDataSource);
-    getMovieDetailsUseCase = GetMovieDetailsUseCaseImpl(movieRepository);
-    controller = MovieDetailsPageController(
-        getMovieDetailsUseCase: getMovieDetailsUseCase);
     controller.getMovieDetails(widget.id);
   }
 

@@ -6,8 +6,9 @@ mixin GetMovieListUseCase {
 }
 
 class GetMovieListUseCaseImpl implements GetMovieListUseCase {
-  GetMovieListUseCaseImpl(MovieRepository movieRepository)
-      : _movieRepository = movieRepository;
+  GetMovieListUseCaseImpl({
+    required MovieRepository movieRepository,
+  }) : _movieRepository = movieRepository;
 
   final MovieRepository _movieRepository;
 
