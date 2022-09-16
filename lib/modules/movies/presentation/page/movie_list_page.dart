@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../../utils/context_extensions.dart';
 import '../common/constants/movies_constant_colors.dart';
 import '../common/widgets/circular_progress_indicator_widget.dart';
+import '../common/widgets/custom_error_widget.dart';
 import '../common/widgets/movie_card_list_widget.dart';
 import '../controller/movie_list_page_controller.dart';
 import 'movie_list_page_state.dart';
@@ -43,9 +44,17 @@ class _MovieListPageState extends State<MovieListPage> {
                 case MovieListPageState.loading:
                   return const CircularProgressIndicatorWidget();
                 case MovieListPageState.genericError:
-                  return const Text('Erro');
+                  return CustomErrorWidget(
+                    errorText: 'Ocorreu um erro!',
+                    onClickButton: controller.getMovieList,
+                    textColor: MoviesConstantColors.secondaryColor,
+                  );
                 case MovieListPageState.networkError:
-                  return const Text('Erro de Internet');
+                  return CustomErrorWidget(
+                    errorText: 'Falha na conexão!',
+                    onClickButton: controller.getMovieList,
+                    textColor: MoviesConstantColors.secondaryColor,
+                  );
                 case MovieListPageState.success:
                   return MovieCardListWidget(movieList: controller.movieList);
               }
