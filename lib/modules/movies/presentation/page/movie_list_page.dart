@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../utils/context_extensions.dart';
 import '../common/constants/movies_constant_colors.dart';
 import '../common/widgets/circular_progress_indicator_widget.dart';
@@ -32,7 +33,7 @@ class _MovieListPageState extends State<MovieListPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: MoviesConstantColors.primaryColor,
-        title: const Text('TMDB'),
+        title: Text(S.of(context).appTitle),
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -45,13 +46,13 @@ class _MovieListPageState extends State<MovieListPage> {
                   return const CircularProgressIndicatorWidget();
                 case MovieListPageState.genericError:
                   return CustomErrorWidget(
-                    errorText: 'Ocorreu um erro!',
+                    errorText: S.of(context).genericError,
                     onClickButton: controller.getMovieList,
                     textColor: MoviesConstantColors.secondaryColor,
                   );
                 case MovieListPageState.networkError:
                   return CustomErrorWidget(
-                    errorText: 'Falha na conexão!',
+                    errorText: S.of(context).failedConnection,
                     onClickButton: controller.getMovieList,
                     textColor: MoviesConstantColors.secondaryColor,
                   );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../constants/movies_constant_colors.dart';
 
 class CustomErrorWidget extends StatelessWidget {
@@ -38,9 +39,9 @@ class CustomErrorWidget extends StatelessWidget {
                   vertical: 5,
                 ),
               ),
-              child: const Text(
-                'Tente Novamente',
-                style: TextStyle(fontSize: 15),
+              child: Text(
+                S.of(context).tryAgain,
+                style: const TextStyle(fontSize: 15),
               ),
             ),
           ),

@@ -1,0 +1,15 @@
+{
+  "@@ locale": "pt_BR",
+  "appTitle": "TMDB",
+  "movieDetailsPageLoading": "Carregando ...",
+  "genericError": "Ocorreu um erro!",
+  "failedConnection": "Falha na conexão!",
+  "movieListPageReleaseDate": "Lançamento:",
+  "movieListPageSeeMore": "Ver Mais",
+  "movieDetailsPageOriginalTitle": "Título Original:",
+  "movieDetailsPageMoreInfo": "MAIS INFORMAÇÕES:",
+  "movieDetailsPageProductionCompanies": "Produtoras:",
+  "movieDetailsPageRevenue": "Receita:",
+  "movieDetailsPageAvailableIn": "Disponível Em:",
+  "tryAgain": "Tente Novamente"
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../domain/model/details/movie_details_model.dart';
 import '../../../utils/string_extensions.dart';
 import '../constants/movies_constant_colors.dart';
@@ -16,11 +17,11 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
-              'Título original:',
-              style: TextStyle(
+              S.of(context).movieDetailsPageOriginalTitle,
+              style: const TextStyle(
                 color: MoviesConstantColors.white,
                 fontSize: 15,
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../generated/l10n.dart';
 import '../../utils/context_extensions.dart';
 import '../common/constants/movies_constant_colors.dart';
 import '../common/constants/movies_constant_generics.dart';
@@ -45,7 +46,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
           builder: (context, state, _) {
             switch (state) {
               case MovieDetailsPageState.loading:
-                return const Text('Carregando...');
+                return Text(S.of(context).movieDetailsPageLoading);
               case MovieDetailsPageState.genericError:
                 return const Text(MoviesConstantGenerics.emptyString);
               case MovieDetailsPageState.networkError:
@@ -65,13 +66,13 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
               return const CircularProgressIndicatorWidget();
             case MovieDetailsPageState.genericError:
               return CustomErrorWidget(
-                errorText: 'Ocorreu um erro!',
+                errorText: S.of(context).genericError,
                 onClickButton: () => controller.getMovieDetails(widget.id),
                 textColor: MoviesConstantColors.white,
               );
             case MovieDetailsPageState.networkError:
               return CustomErrorWidget(
-                errorText: 'Falha na conexão!',
+                errorText: S.of(context).failedConnection,
                 onClickButton: () => controller.getMovieDetails(widget.id),
                 textColor: MoviesConstantColors.white,
               );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../constants/movies_constant_routes.dart';
 import '../../../domain/model/movie/movie_model.dart';
 import '../../../utils/string_extensions.dart';
@@ -77,9 +78,9 @@ class MovieCardWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Lançamento:',
-                        style: TextStyle(
+                      Text(
+                        S.of(context).movieListPageReleaseDate,
+                        style: const TextStyle(
                           color: MoviesConstantColors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
@@ -113,9 +114,9 @@ class MovieCardWidget extends StatelessWidget {
                           vertical: 5,
                         ),
                       ),
-                      child: const Text(
-                        'Ver Mais',
-                        style: TextStyle(fontSize: 15),
+                      child: Text(
+                        S.of(context).movieListPageSeeMore,
+                        style: const TextStyle(fontSize: 15),
                       ),
                     ),
                   ),

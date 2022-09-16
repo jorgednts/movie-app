@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../domain/model/details/movie_details_model.dart';
 import '../constants/movies_constant_colors.dart';
 
@@ -20,17 +21,17 @@ class MovieAdditionalDetailsWidget extends StatelessWidget {
           children: [
             const SizedBox(height: 10),
             Row(
-              children: const [
-                SizedBox(width: 15),
-                Icon(
+              children: [
+                const SizedBox(width: 15),
+                const Icon(
                   Icons.more_vert_rounded,
                   color: MoviesConstantColors.lightBlue,
                   size: 18,
                 ),
                 Expanded(
                   child: Text(
-                    'MAIS INFORMAÇÕES:',
-                    style: TextStyle(
+                    S.of(context).movieListPageSeeMore,
+                    style: const TextStyle(
                       color: MoviesConstantColors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 20,
@@ -40,11 +41,11 @@ class MovieAdditionalDetailsWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            const Padding(
-              padding: EdgeInsets.only(left: 30),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
               child: Text(
-                'Produtoras:',
-                style: TextStyle(
+                S.of(context).movieDetailsPageProductionCompanies,
+                style: const TextStyle(
                   color: MoviesConstantColors.white,
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
@@ -97,9 +98,9 @@ class MovieAdditionalDetailsWidget extends StatelessWidget {
             Row(
               children: [
                 const SizedBox(width: 30),
-                const Text(
-                  'Receita:',
-                  style: TextStyle(
+                Text(
+                  S.of(context).movieDetailsPageRevenue,
+                  style: const TextStyle(
                     color: MoviesConstantColors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -118,11 +119,11 @@ class MovieAdditionalDetailsWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            const Padding(
-              padding: EdgeInsets.only(left: 30),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
               child: Text(
-                'Disponível em: ',
-                style: TextStyle(
+                S.of(context).movieDetailsPageAvailableIn,
+                style: const TextStyle(
                   color: MoviesConstantColors.white,
                   fontWeight: FontWeight.w500,
                   fontSize: 16,
