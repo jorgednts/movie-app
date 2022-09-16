@@ -8,6 +8,7 @@ import '../../domain/use_case/get_movie_details_use_case.dart';
 import '../../external/remote_data_source/movies_remote_data_source_impl.dart';
 import '../common/constants/movies_constant_colors.dart';
 import '../common/widgets/circular_progress_indicator_widget.dart';
+import '../common/widgets/movie_additional_details_widget.dart';
 import '../common/widgets/movie_description_widget.dart';
 import '../common/widgets/movie_general_details_widget.dart';
 import '../controller/movie_details_page_controller.dart';
@@ -87,6 +88,10 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                       ),
                       const SizedBox(height: 10),
                       MovieDescriptionWidget(movieDetails: controller.movie!),
+                      const SizedBox(height: 20),
+                      MovieAdditionalDetailsWidget(
+                        movieDetails: controller.movie!,
+                      ),
                       const SizedBox(height: 10),
                     ],
                   ),

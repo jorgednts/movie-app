@@ -45,7 +45,8 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
                         ),
                         const TextSpan(text: '   '),
                         TextSpan(
-                          text: '(${movieDetails.originalLanguage.toUpperCase()})',
+                          text:
+                              '(${movieDetails.originalLanguage.toUpperCase()})',
                           style: const TextStyle(
                             color: MoviesConstantColors.white,
                             fontWeight: FontWeight.w500,
@@ -73,15 +74,15 @@ class MovieGeneralDetailsWidget extends StatelessWidget {
                     fontSize: 12,
                   ),
                 ),
-                //if (controller.movie!.adult)
-                const Text(
-                  'NSFW',
-                  style: TextStyle(
-                    color: MoviesConstantColors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 12,
+                if (movieDetails.adult)
+                  const Text(
+                    'NSFW',
+                    style: TextStyle(
+                      color: MoviesConstantColors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                    ),
                   ),
-                ),
                 Text(
                   '${movieDetails.runtime.toString()} min.',
                   style: const TextStyle(

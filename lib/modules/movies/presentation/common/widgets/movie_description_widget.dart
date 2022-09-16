@@ -32,7 +32,7 @@ class MovieDescriptionWidget extends StatelessWidget {
                       Text(
                         movieDetails.overview,
                         style: const TextStyle(
-                          fontSize: 13,
+                          fontSize: 14,
                           color: MoviesConstantColors.white,
                         ),
                         textAlign: TextAlign.justify,
