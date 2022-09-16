@@ -1,16 +1,18 @@
-# movie_app
+## App Flutter
+Desafio de estágio em Desenvolvimento Mobile da empresa Tokenlab
 
-A new Flutter project.
+## Telas:
+- Tela de listagem dos filmes: Nessa tela é realizada uma requisição para obter a lista de filmes
 
-## Getting Started
+- Tela de detalhes de um filme: Nessa tela é realizada outra requisição para obter os detalhes de um filme clicado na tela anterior
 
-This project is a starting point for a Flutter application.
+## Arquitetura:
+Clean Architecture + MVVM
 
-A few resources to get you started if this is your first Flutter project:
+## Principais bibliotecas:
+- Gerenciamento de estado: Value Notifier
+- Requisições HTTP: Dio
+- Injecão de dependência e gerenciamento de rotas: Flutter Modular
+- Internaciolização: Flutter Intl
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots:
