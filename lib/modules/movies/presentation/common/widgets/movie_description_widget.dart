@@ -84,10 +84,9 @@ class MovieDescriptionWidget extends StatelessWidget {
                       Text(
                         movieDetails.status,
                         style: const TextStyle(
-                          color: MoviesConstantColors.white,
-                          fontSize: 15,
-                          fontStyle: FontStyle.italic
-                        ),
+                            color: MoviesConstantColors.white,
+                            fontSize: 15,
+                            fontStyle: FontStyle.italic),
                       ),
                     ],
                   ),

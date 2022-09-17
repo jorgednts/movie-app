@@ -1,6 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:movie_app/modules/movies/module/movies_module.dart';
+
 import '../modules/common/app_constant_routes.dart';
+import '../modules/movies/module/movies_module.dart';
 
 class AppModule extends Module {
   @override
