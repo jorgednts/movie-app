@@ -14,6 +14,7 @@ Clean Architecture + MVVM
 - Requisições HTTP: Dio
 - Injecão de dependência e gerenciamento de rotas: Flutter Modular
 - Internaciolização: Flutter Intl
+- Banco de dados local: Hive
 
 ## Screenshots:
 <img height="480px" src="assets/images_read_me/img1.png"> <img height="480px" src="assets/images_read_me/img2.png"> <img height="480px" src="assets/images_read_me/img3.png"> <img height="480px" src="assets/images_read_me/img4.png"> <img height="480px" src="assets/images_read_me/img5.png"> <img height="480px" src="assets/images_read_me/img6.png"> 
