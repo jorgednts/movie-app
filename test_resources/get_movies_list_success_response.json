@@ -1,0 +1,25 @@
+[
+  {
+    "id": 19404,
+    "vote_average": 9.3,
+    "title": "Dilwale Dulhania Le Jayenge",
+    "poster_url": "https://image.tmdb.org/t/p/w200/2CAL2433ZeIihfX1Hb2139CX0pW.jpg",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "release_date": "1995-10-20"
+  },
+  {
+    "id": 278,
+    "vote_average": 8.6,
+    "title": "The Shawshank Redemption",
+    "poster_url": "https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "release_date": "1994-09-23"
+  }
+]

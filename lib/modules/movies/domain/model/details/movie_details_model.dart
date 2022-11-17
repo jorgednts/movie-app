@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 import 'production_companies_model.dart';
 
-class MovieDetailsModel {
-  MovieDetailsModel({
+class MovieDetailsModel extends Equatable {
+  const MovieDetailsModel({
     required this.adult,
     required this.budget,
     required this.genres,
@@ -36,4 +38,24 @@ class MovieDetailsModel {
   final String status;
   final String title;
   final double voteAverage;
+
+  @override
+  List<Object?> get props => [
+        adult,
+        budget,
+        genres,
+        id,
+        originalLanguage,
+        originalTitle,
+        overview,
+        posterUrl,
+        productionCompanies,
+        releaseDate,
+        revenue,
+        runtime,
+        spokenLanguages,
+        status,
+        title,
+        voteAverage,
+      ];
 }
